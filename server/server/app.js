@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const keys = require('./config/keys')
 
 mongoose.connection.openUri('mongodb://localhost:27017/tdg', (err, res) => {
     if(err) throw err
