@@ -23,6 +23,6 @@ const usuarioRoutes = require('./routes/usuario')
 
 app.use('/usuario',usuarioRoutes)
 
-app.listen(PORT=8080, () => {
-    console.log('Aplicación corriendo en el puerto 8080. \x1b[32m%s\x1b[0m','Online')
+app.listen(PORT=5000, () => {
+    console.log('Aplicación corriendo en el puerto 5000. \x1b[32m%s\x1b[0m','Online')
 })
