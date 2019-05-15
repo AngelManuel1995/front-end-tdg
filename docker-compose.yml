@@ -1,0 +1,28 @@
+version: '3'
+services: 
+  mongo:
+    image: mongo
+    environment: 
+      - "MONGO_INITDB_DATABASE=db_tdg"
+      - "MONGO_INITDB_ROOT_USERNAME=user_tdg"
+      - "MONGO_INITDB_ROOT_PASSWORD=tdg_123!-"
+      - "MONGO_DATA_DIR=/data/db"
+      - "MONGO_LOG_DIR=/dev/null"
+    ports: 
+      - 27018:27017
+    volumes: 
+      - "voltdgdb:/data/db"
+      - "volconfgdb:/data/configdb"
+    networks: 
+      - nettdg
+  api:
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./server
+    networks: 
+      - nettdg
+volumes: 
+  voltdgdb:
+  volconfgdb:
+networks: 
+  nettdg:

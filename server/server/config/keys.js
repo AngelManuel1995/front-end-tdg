@@ -1,7 +1,5 @@
 module.exports = {
-    mongoUser: process.env.MONGO_USER,
-    mongoHost: process.env.MONGO_HOST,
-    mongoDatabase: process.env.MONGODATABASE,
-    mongoPassword: process.env.MONGOPASSWORD,
-    mongoPort: process.env.MONGOPORT
+    mongoDatabase: process.env.MONGO_INITDB_DATABASE,
+    mongoRootusername: process.env.MONGO_INITDB_ROOT_USERNAME,
+    mongoPassword: process.env.MONGO_INITDB_ROOT_PASSWORD
 }
