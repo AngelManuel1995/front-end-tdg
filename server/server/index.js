@@ -3,8 +3,6 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const keys = require('./config/keys')
 
-console.log(keys)
-
 mongoose.connection.openUri(`mongodb://${keys.mongoRootusername}:${keys.mongoPassword}@${keys.mongoHost}:${keys.mongoPort}/${keys.mongoDatabase}`, (err, res) => {
     if(err) throw err
     console.log('Base de datos: \x1b[32m%s\x1b[0m', 'Online')
