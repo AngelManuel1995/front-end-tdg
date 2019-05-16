@@ -27,6 +27,15 @@ services:
       - "MONGO_PORT=27017"
     networks: 
       - nettdg
+  cliente:
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes: 
+      - /client/node_modules
+      - ./client:/client
+    networks: 
+      - nettdg
 volumes: 
   voltdgdb:
   volconfgdb:
