@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
+import { CommonModule } from '@angular/common'
 // import { ProgressComponent } from "./progress/progess.component";
 // import { GraphicOneComponent } from './graphicone/graphicone.component'
 // import { AccountSettingsComponent } from './account-settings/account-settings.component'
@@ -34,6 +35,7 @@ import { SharedModule } from '../shared/shared.module'
     ],
     imports:[
         FormsModule,
+        CommonModule,
         // ComponentsModule,
         SharedModule,
         RouterModule,

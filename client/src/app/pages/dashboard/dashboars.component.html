@@ -1,3 +1,18 @@
-<h1>
-    Dashboard works!
-</h1>
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="text-center">
+            Bienvenido al mejor lugar para aprender jugando
+        </h1>
+    </div>
+    <div class="col-md-12">
+        <p class="text-center">Qué te parece si seleccionamos un compañero de estudio</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3" *ngFor="let avatar of avatares" >
+        <div>
+            <img (click)="avatar.selected = !avatar.selected"[src]="avatar.img" width="150" alt="" style="cursor: pointer; margin-left: 65px;">
+            <input *ngIf="avatar.selected" [(ngModel)]="avatar.name" name="name" type="text" class="form-control" placeholder="Como te gustaria llamarme?">
+        </div>
+    </div>
+</div>
