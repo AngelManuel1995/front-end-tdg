@@ -1,2 +1,2 @@
-FROM node:alpine as builder
-RUN npm install -g @angular/cli
+FROM nginx
+COPY ./default.conf /etc/nginx/conf.d/default.conf

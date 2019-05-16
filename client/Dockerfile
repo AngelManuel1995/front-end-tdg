@@ -7,6 +7,6 @@ COPY . .
 RUN ng build --prod=true
 
 FROM nginx
-EXPOSE 3000
+EXPOSE 4200
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /client/dist/frontEndTdg /usr/share/nginx/html/cliente

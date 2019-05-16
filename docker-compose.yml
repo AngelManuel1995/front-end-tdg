@@ -1,5 +1,14 @@
 version: '3'
 services: 
+  nginx:
+    restart: always
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports: 
+      - '4050:80'
+    networks: 
+      - nettdg
   mongo:
     image: mongo
     environment: 
@@ -27,15 +36,20 @@ services:
       - "MONGO_PORT=27017"
     networks: 
       - nettdg
-  cliente:
+    volumes: 
+      - /app/node_modules
+      - ./server:/app
+  client:
     build: 
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./client
     volumes: 
       - /client/node_modules
       - ./client:/client
     networks: 
       - nettdg
+    ports: 
+      - "4200:4200"
 volumes: 
   voltdgdb:
   volconfgdb:
